@@ -2,7 +2,16 @@
 
 <h1><%= content_for :title %></h1>
 <p>
-  <span class="user_menu"><%= image_tag('user_add.png', :alt => t(:create_a_new_user)) %> <%= link_to t(:create_a_new_user), new_user_path %></span>
+  <span class="user_menu">
+    <%= image_tag('user_add.png', :alt => t(:invite_a_new_user)) %>
+    <%= link_to t(:invite_a_new_user), new_user_path %>
+  </span>
+
+    
+  <span class="user_menu">
+    <%= image_tag('user_add.png', :alt => t(:create_a_new_user)) %>
+    <%= link_to t(:create_a_new_user), new_user_path(complete: 1) %>
+  </span>
 </p>
 
 <h3><%= t :active_users %></h3>

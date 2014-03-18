@@ -5,7 +5,7 @@ class CreateUsers < ActiveRecord::Migration
       t.string :email
       t.string :hashed_password
       t.string :password_salt
-      t.string :is_admin
+      t.boolean :is_admin
       t.string :access_key
       t.string :remember_token
       t.string :reset_password_token

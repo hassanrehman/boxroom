@@ -353,6 +353,7 @@
 
   #users/index
   create_a_new_user: Create a new user
+  invite_a_new_user: Invite a new user
   active_users: Active users
   invited_users: Invited users
   expiration_date: Expiration date

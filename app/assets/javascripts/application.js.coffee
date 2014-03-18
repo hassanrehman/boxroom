@@ -1,10 +1,13 @@
 //= require jquery
+//= require jquery-ui-1.10.4.custom.min
 //= require jquery_ujs
-//= require jquery-fileupload/basic
-//= require jquery-fileupload/vendor/tmpl
+//= require plupload.full.min
+//= require jquery.ui.plupload
 //= require_self
 //= require_tree .
 
+# require jquery-fileupload/basic
+# require jquery-fileupload/vendor/tmpl
 $(window).load ->
   fadeout '#notice'
   fadeout '#alert'

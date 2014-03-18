@@ -19,7 +19,11 @@ class FilesController < ApplicationController
 
   # @target_folder is set in require_existing_target_folder
   def create
-    @file = @target_folder.user_files.create(permitted_params.user_file)
+    puts permitted_params.params.inspect
+    @file = @target_folder.user_files.create(
+      attachment: permitted_params.params["file"], 
+      folder_id: permitted_params.params["folder_id"]
+    )
     render :nothing => true
   end
 
