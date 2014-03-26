@@ -20,6 +20,7 @@
 <div id="files_and_folders">
   <table>
     <tr>
+      <th><%= check_box_tag :select_all %></th>
       <th></th>
       <th><%= t :name %></th>
       <th><%= t :size %></th>
@@ -28,6 +29,7 @@
     </tr>
   <% unless @folder.is_root? -%>
     <tr class="<%= cycle('even','odd') %>">
+      <td></td>
       <td><%= image_tag('folder.png') %></td>
       <td class="file_name">&uarr; <%= link_to t(:up), @folder.parent, :title => @folder.parent.name %></td>
       <td class="file_size">--</td>
@@ -38,8 +40,9 @@
   <% @folder.children.each do |folder| -%>
     <% if current_user.can_read(folder) -%>
     <tr class="<%= cycle('even','odd') %>">
+      <td><%= check_box_tag :select_one %></td>
       <td><%= image_tag('folder.png') %></td>
-      <td class="file_name"><%= link_to folder.name, folder %></td>
+      <td class="file_name"><%= link_to truncate(folder.name, length: 25), folder %></td>
       <td class="file_size">--</td>
       <td class="file_modified"><%= l folder.updated_at, :format => :short %></td>
       <td>
@@ -60,8 +63,9 @@
   <% @folder.user_files.each do |file| -%>
     <% if current_user.can_read(@folder) -%>
     <tr class="<%= cycle('even','odd') %>">
+      <td><%= check_box_tag :select_one %></td>
       <td><%= image_tag(file_icon(file.extension)) %></td>
-      <td class="file_name"><%= link_to file.attachment_file_name, file_path(file), :title => "#{t(:download)} #{file.attachment_file_name}" %></td>
+      <td class="file_name"><%= link_to truncate(file.attachment_file_name, length: 25), file_path(file), :title => "#{t(:download)} #{file.attachment_file_name}" %></td>
       <td class="file_size"><%= number_to_human_size(file.attachment_file_size, :locale => I18n.locale) %></td>
       <td class="file_modified"><%= l file.updated_at, :format => :short %></td>
       <td>

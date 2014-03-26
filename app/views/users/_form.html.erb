@@ -1,6 +1,6 @@
 <%= form_for @user do |f| %>
   <%= f.error_messages %>
-  <% unless @user.new_record? -%>
+  <% if !@user.new_record? or @complete_user -%>
   <p>
     <%= f.label :name %>:<br>
     <%= f.text_field :name, { :class => 'text_input' } %>
@@ -10,7 +10,7 @@
     <%= f.label :email %>:<br>
     <%= f.text_field :email, { :class => 'text_input' } %>
   </p>
-  <% unless @user.new_record? -%>
+  <% if !@user.new_record? or @complete_user -%>
   <p>
     <%= f.label :password %>:<br>
     <%= f.password_field :password, { :class => 'text_input' } %>

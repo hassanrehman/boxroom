@@ -10,6 +10,7 @@ class UsersController < ApplicationController
 
   def new
     @user = User.new
+    @complete_user = params[:complete].present?
   end
 
   def create
