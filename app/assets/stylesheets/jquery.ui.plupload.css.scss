@@ -118,7 +118,7 @@
   position: absolute;
   left: 6px;
   top: 6px;
-  background: #eeeeee image-url(/assets/plupload/loading.gif) center no-repeat;
+  background: #eeeeee image-url('/assets/plupload/loading.gif') center no-repeat;
 }
 
 .plupload_file_thumb_loaded .plupload_file_thumb {
