@@ -72,8 +72,8 @@ td img { padding: 0; }
 .notice { background-color: rgba(0,165,0,0.7); }
 
 .error p, .notice p { display: inline-block; font-size: 16pt; color: #FFF; margin: 0; padding: 10px 0 10px 45px; background-repeat: no-repeat; background-position: 0 5px; }
-.error p { background-image: url(exclamation.png); }
-.notice p { background-image: url(information.png); }
+.error p { background-image: image-url(exclamation.png); }
+.notice p { background-image: image-url(information.png); }
 
 span.field_with_errors input, span.field_with_errors textarea { background-color: #FDD; }
 #errorExplanation { width: 500px; border: 2px solid #c00; padding: 7px 7px 15px 7px; margin: 10px 0 10px 0; background-color: #f0f0f0; }
