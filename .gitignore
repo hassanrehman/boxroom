@@ -3,7 +3,6 @@
 .rvmrc
 .sass-cache/
 config/initializers/mailer.rb
-config/initializers/secret_token.rb
 db/*.sqlite3
 log/*
 tmp/*
